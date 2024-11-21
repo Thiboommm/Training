@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <block class="Magento\Catalog\Block\Product\View" name="subtitle"
+                   template="Convert_Training::product/view/subtitle.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="product.info.overview" remove="true"/>
+        <move element="product.info.description" destination="product.info.media"
+              after="product.info.media.image"/>
+        <referenceContainer name="content">
+            <block name="leave.message"
+                   template="Convert_Training::product/view/leaveMessage.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.media">
+            <block class="Magento\Catalog\Block\Product\View" name="external.url.button"
+                   after="product.info.media.image" template="Convert_Training::product/view/externalUrl.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

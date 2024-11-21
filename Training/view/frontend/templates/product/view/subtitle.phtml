@@ -1,0 +1,16 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template\ $block */
+
+$_product = $block->getProduct();
+
+if ($_product && $_product->getResource()->getAttribute('subtitle_text')) {
+    // Get the attribute value and label
+    $value = $_product->getResource()->getAttribute('subtitle_text')->getFrontend()->getValue($_product);
+    $label = $_product->getResource()->getAttribute('subtitle_text')->getStoreLabel();
+
+    // Check if value exists before displaying
+    if ($value) {
+        // Output the value and label, properly translated
+        echo __($label . ': ' . $value);
+    }
+}

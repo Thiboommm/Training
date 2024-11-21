@@ -1,0 +1,29 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template\ $block */
+
+$product = $block->getProduct();
+$externalUrl = $product->getData('external_url');
+?>
+
+<div data-bind="scope: 'externalUrlSection'">
+    <button type="button" data-bind="click: combineAction">
+        <span data-bind="i18n: 'External URL'"></span>
+    </button>
+    <div id="external-url" data-bind="visible: shouldShowMessage">
+        <a href="<?= $externalUrl; ?>" target="_blank"><?= $externalUrl; ?></a>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "externalUrlSection": {
+                        "component": "Convert_Training/js/externalUrl"
+                    }
+                }
+            }
+        }
+    }
+</script>

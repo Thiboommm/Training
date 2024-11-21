@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Convert\Blog\Api\Data\BlogInterface"
+                type="Convert\Blog\Model\Blog"/>
+    <preference for="Convert\Blog\Api\BlogRepositoryInterface"
+                type="Convert\Blog\Model\BlogRepository"/>
+    <preference for="Convert\Blog\Api\Data\BlogSearchResultInterface"
+                type="Magento\Framework\Api\Search\SearchResult"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="blog_grid_datasource" xsi:type="string">
+                    Convert\Blog\Model\ResourceModel\Blog\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Convert\Blog\Model\ResourceModel\Blog\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">blog_post</argument>
+            <argument name="resourceModel" xsi:type="string">Convert\Blog\Model\ResourceModel\Blog</argument>
+        </arguments>
+    </virtualType>
+</config>
