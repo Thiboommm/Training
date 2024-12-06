@@ -5,7 +5,7 @@ declare (strict_types=1);
 namespace Convert\Blog\Controller\Adminhtml\Actions;
 
 use Magento\Backend\App\Action;
-use Magento\Framework\App\Action\Context;
+use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
@@ -16,7 +16,7 @@ class Edit extends Action
 {
     protected PageFactory $resultPageFactory;
     protected BlogRepositoryInterface $blogRepository;
-    
+
     /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
