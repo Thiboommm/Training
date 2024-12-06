@@ -4,14 +4,11 @@ declare (strict_types=1);
 
 namespace Convert\Blog\Controller\Adminhtml\Actions;
 
+use Convert\Blog\Model\ResourceModel\Collection;
 use Magento\Backend\App\Action;
 use Magento\Backend\Model\View\Result\Redirect;
 use Magento\Framework\Controller\ResultFactory;
-use Convert\Blog\Model\ResourceModel\Collection;
 
-/**
- * Class MassDelete
- */
 class MassDelete extends Action
 {
     const ID_FIELD = 'id';
@@ -21,7 +18,6 @@ class MassDelete extends Action
     /**
      * @return Redirect
      */
-
     public function execute(): Redirect
     {
         $selected = $this->getRequest()->getParam('selected');

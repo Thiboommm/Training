@@ -5,12 +5,12 @@ declare (strict_types=1);
 namespace Convert\Blog\Controller\Adminhtml\Actions;
 
 use Convert\Blog\Model\Blog;
+use Convert\Blog\Model\ResourceModel\Blog as BlogResourceModel;
+use Convert\Blog\Model\ResourceModel\BlogFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Convert\Blog\Model\ResourceModel\BlogFactory;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
-use Convert\Blog\Model\ResourceModel\Blog as BlogResourceModel;
 
 class Delete extends Action
 {

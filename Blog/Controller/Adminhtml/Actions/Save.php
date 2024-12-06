@@ -4,20 +4,20 @@ declare (strict_types=1);
 
 namespace Convert\Blog\Controller\Adminhtml\Actions;
 
-use Magento\Backend\App\Action;
-use Magento\Backend\App\Action\Context;
-use Convert\Blog\Model\ResourceModel\Blog as BlogResourceModel;
 use Convert\Blog\Model\Blog;
 use Convert\Blog\Model\BlogFactory;
+use Convert\Blog\Model\ResourceModel\Blog as BlogResourceModel;
 use Exception;
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 
 class Save extends Action
 {
-    protected BlogResourceModel $blogResourceModel;
     protected BlogFactory $blogFactory;
+    protected BlogResourceModel $blogResourceModel;
     protected DateTime $date;
 
     public function __construct(

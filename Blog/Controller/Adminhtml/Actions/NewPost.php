@@ -4,11 +4,11 @@ declare (strict_types=1);
 
 namespace Convert\Blog\Controller\Adminhtml\Actions;
 
+use Convert\Blog\Api\BlogRepositoryInterface;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
-use Convert\Blog\Api\BlogRepositoryInterface;
 
 class NewPost extends Action
 {
